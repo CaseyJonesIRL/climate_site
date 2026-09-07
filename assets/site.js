@@ -18,4 +18,22 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  var mission = document.getElementById("mission-statement");
+  if (mission && "IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            mission.classList.add("mission-in-view");
+            observer.unobserve(mission);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(mission);
+  } else if (mission) {
+    mission.classList.add("mission-in-view");
+  }
 });

@@ -113,7 +113,7 @@ a:hover { color: #822c0e; text-decoration: underline; }
   100% { top: 0%;   left: 50%;  transform: translate(-50%, -50%); }
 }
 
-/* Redaction bar (Beat 1) */
+/* Redaction bar (Beat 1) — wipes away, then the answer fades in */
 .redact {
   display: inline-block;
   height: 0.8em;
@@ -122,16 +122,49 @@ a:hover { color: #822c0e; text-decoration: underline; }
   border-radius: 2px;
   vertical-align: -0.08em;
   margin: 0 2px;
-  transition: opacity 0.25s ease;
+  overflow: hidden;
+  transition: width 0.45s cubic-bezier(0.65, 0, 0.35, 1),
+              opacity 0.3s ease 0.15s,
+              margin 0.45s ease,
+              border-width 0.45s ease;
+}
+.is-revealed .redact {
+  width: 0 !important;
+  opacity: 0;
+  margin: 0;
+  border-width: 0;
 }
 .reveal-answer { display: none; color: var(--orange-bright); font-weight: 600; }
-.is-revealed .redact { display: none; }
-.is-revealed .reveal-answer { display: inline; }
-.is-revealed .reveal-hint { display: none; }
+.is-revealed .reveal-answer {
+  display: inline;
+  animation: revealFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
 .is-revealed .reveal-hint { display: none; }
 .reveal-note { display: none; }
-.is-revealed .reveal-note { display: block; }
+.is-revealed .reveal-note {
+  display: block;
+  animation: revealFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+@keyframes revealFadeIn {
+  0%   { opacity: 0; filter: blur(3px); transform: translateY(2px) scale(0.97); }
+  100% { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
+}
 .reveal-hint { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 36px; }
+
+/* Mission statement word glow, triggered on scroll into view */
+.glow-word {
+  color: var(--ink-soft);
+  transition: color 1.2s ease;
+}
+.mission-in-view .glow-word {
+  color: var(--orange);
+  animation: glowPulse 1.8s ease-out;
+}
+@keyframes glowPulse {
+  0%   { text-shadow: 0 0 0 rgba(242, 83, 27, 0); color: var(--ink-soft); }
+  40%  { text-shadow: 0 0 16px rgba(242, 83, 27, 0.7), 0 0 32px rgba(242, 83, 27, 0.35); color: var(--orange); }
+  100% { text-shadow: 0 0 8px rgba(242, 83, 27, 0.3); color: var(--orange); }
+}
 .is-revealed .reveal-hint { display: none !important; }
 
 /* Section labels/quotes reused across subpages */
