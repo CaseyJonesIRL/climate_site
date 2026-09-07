@@ -113,37 +113,47 @@ a:hover { color: #822c0e; text-decoration: underline; }
   100% { top: 0%;   left: 50%;  transform: translate(-50%, -50%); }
 }
 
-/* Redaction bar (Beat 1) — wipes away, then the answer fades in */
-.redact {
+/* Redaction bar (Beat 1) — the answer text is always laid out in place;
+   a cover sits on top and wipes away via transform/opacity only, so
+   nothing around it ever reflows. This is what makes the reveal smooth
+   instead of jumpy. */
+.redact-slot {
+  position: relative;
   display: inline-block;
-  height: 0.8em;
+}
+.reveal-answer {
+  color: var(--orange-bright);
+  font-weight: 600;
+}
+.redact-cover {
+  position: absolute;
+  inset: -0.06em -0.18em;
   background: #0B0B0C;
   border: 1px solid rgba(242, 83, 27, 0.6);
   border-radius: 2px;
-  vertical-align: -0.08em;
-  margin: 0 2px;
-  overflow: hidden;
-  transition: width 0.45s cubic-bezier(0.65, 0, 0.35, 1),
-              opacity 0.3s ease 0.15s,
-              margin 0.45s ease,
-              border-width 0.45s ease;
+  transform-origin: right center;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.05s,
+              opacity 0.5s ease 0.15s,
+              border-color 0.5s ease 0.15s;
 }
-.is-revealed .redact {
-  width: 0 !important;
+.is-revealed .redact-cover {
+  transform: scaleX(0);
   opacity: 0;
-  margin: 0;
-  border-width: 0;
+  border-color: rgba(242, 83, 27, 0);
 }
-.reveal-answer { display: none; color: var(--orange-bright); font-weight: 600; }
 .is-revealed .reveal-answer {
-  display: inline;
-  animation: revealFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+  animation: answerGlow 1s ease-out 0.35s;
+}
+@keyframes answerGlow {
+  0%   { text-shadow: 0 0 0 rgba(242, 83, 27, 0); }
+  45%  { text-shadow: 0 0 14px rgba(242, 83, 27, 0.65); }
+  100% { text-shadow: 0 0 0 rgba(242, 83, 27, 0); }
 }
 .is-revealed .reveal-hint { display: none; }
 .reveal-note { display: none; }
 .is-revealed .reveal-note {
   display: block;
-  animation: revealFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+  animation: revealFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
 }
 @keyframes revealFadeIn {
   0%   { opacity: 0; filter: blur(3px); transform: translateY(2px) scale(0.97); }
@@ -264,6 +274,27 @@ a:hover { color: #822c0e; text-decoration: underline; }
 @media (max-width: 380px) {
   .col { padding: 0 20px; }
 }
+
+/* Cross-page nav strip, top of every child page */
+.subnav {
+  background: var(--navy-deep);
+  border-bottom: 1px solid rgba(242, 83, 27, 0.2);
+}
+.subnav-inner {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 12px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+.subnav a {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: rgba(230, 225, 215, 0.65);
+}
+.subnav a:hover { color: var(--orange); }
 
 /* Password gate — hide real content until unlocked */
 body { visibility: hidden; }
