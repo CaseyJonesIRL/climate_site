@@ -149,7 +149,6 @@ a:hover { color: #822c0e; text-decoration: underline; }
   45%  { text-shadow: 0 0 14px rgba(242, 83, 27, 0.65); }
   100% { text-shadow: 0 0 0 rgba(242, 83, 27, 0); }
 }
-.is-revealed .reveal-hint { display: none; }
 .reveal-note { display: none; }
 .is-revealed .reveal-note {
   display: block;
@@ -159,7 +158,26 @@ a:hover { color: #822c0e; text-decoration: underline; }
   0%   { opacity: 0; filter: blur(3px); transform: translateY(2px) scale(0.97); }
   100% { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
 }
-.reveal-hint { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 36px; }
+
+/* Scroll hint — "tap to reveal" before, "keep scrolling" after, so the
+   cue for more content below never just vanishes. */
+.scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+.scroll-hint-label.post-reveal { display: none; }
+.is-revealed .scroll-hint-label.pre-reveal { display: none; }
+.is-revealed .scroll-hint-label.post-reveal { display: block; }
+.is-revealed .scroll-hint-chevron {
+  animation: scrollBounce 1.6s ease-in-out infinite;
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
 
 /* Mission statement word glow, triggered on scroll into view */
 .glow-word {
@@ -275,7 +293,9 @@ a:hover { color: #822c0e; text-decoration: underline; }
   .col { padding: 0 20px; }
 }
 
-/* Cross-page nav strip, top of every child page */
+/* Cross-page nav strip, top of every child page.
+   Single scrollable row of tappable pills, never wraps into a
+   cramped multi-line grid on narrow screens. */
 .subnav {
   background: var(--navy-deep);
   border-bottom: 1px solid rgba(242, 83, 27, 0.2);
@@ -283,18 +303,33 @@ a:hover { color: #822c0e; text-decoration: underline; }
 .subnav-inner {
   max-width: 480px;
   margin: 0 auto;
-  padding: 12px 28px;
+  padding: 10px 16px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.subnav-inner::-webkit-scrollbar { display: none; }
 .subnav a {
   font-family: "IBM Plex Mono", "Courier New", monospace;
-  font-size: 10.5px;
-  letter-spacing: 0.04em;
-  color: rgba(230, 225, 215, 0.65);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: rgba(230, 225, 215, 0.75);
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 8px 14px;
+  border: 1px solid rgba(242, 83, 27, 0.3);
+  border-radius: 100px;
 }
-.subnav a:hover { color: var(--orange); }
+.subnav a:hover, .subnav a:active {
+  background: rgba(242, 83, 27, 0.14);
+  border-color: rgba(242, 83, 27, 0.6);
+  color: var(--orange);
+}
 
 /* Password gate — hide real content until unlocked */
 body { visibility: hidden; }
