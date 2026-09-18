@@ -35,33 +35,31 @@
     <div>
       <div class="label">Start with a claim you can check tonight</div>
       <div class="serif" style="font-size:16px; line-height:1.7; margin-bottom:18px;">
-        One argument comes up constantly: sea level isn&rsquo;t really rising &mdash; look at a landmark like Plymouth Rock, it hasn&rsquo;t moved in centuries. Fair challenge. So don&rsquo;t take our word for it &mdash; below is the nearest long-record tide gauge, with data back to 1921. Drag the timeline yourself.
+        The Coast Guard runs the Center for Arctic Study and Policy &mdash; a real program, built around a region that&rsquo;s changing fast enough to affect where ships can go, where search-and-rescue happens, and where the Coast Guard itself operates. Don&rsquo;t take our word for how fast. Below is the actual satellite record of the Arctic&rsquo;s summer sea ice minimum, year by year since 1985. Drag the timeline yourself.
       </div>
 
       <div style="border:1.5px solid var(--rule); border-radius:8px; padding:18px 16px 14px;">
-        <div id="chart-readout" class="mono" style="font-size:13px; font-weight:600; color:var(--orange-deep); text-align:center; margin-bottom:8px;">2020 &middot; +0.114m</div>
+        <div id="chart-readout" class="mono" style="font-size:13px; font-weight:600; color:var(--orange-deep); text-align:center; margin-bottom:8px;">2024 &middot; 4.28M km&sup2;</div>
         <svg id="tide-chart" viewBox="0 0 320 160" width="100%" style="display:block; overflow:visible; touch-action:pan-y; cursor:grab;">
           <line x1="30" y1="15" x2="310" y2="15" stroke="var(--rule)" stroke-width="1"></line>
-          <line x1="30" y1="72.5" x2="310" y2="72.5" stroke="var(--rule)" stroke-width="1"></line>
           <line x1="30" y1="130" x2="310" y2="130" stroke="var(--rule)" stroke-width="1"></line>
-          <text x="26" y="19" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-soft)">+0.2m</text>
-          <text x="26" y="76.5" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-soft)">0m</text>
-          <text x="26" y="134" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-soft)">&minus;0.2m</text>
-          <polygon points="30,111.6 55.5,92.3 83.7,92.3 112,113.3 126.2,80.3 140.3,70.5 154.4,84.6 168.6,82.9 182.7,68.8 196.9,76.8 225.2,67.9 247.8,43.8 267.6,37.7 281.7,29.4 295.9,46.9 310,39.7 310,130 30,130" fill="var(--orange)" opacity="0.08"></polygon>
-          <polyline points="30,111.6 55.5,92.3 83.7,92.3 112,113.3 126.2,80.3 140.3,70.5 154.4,84.6 168.6,82.9 182.7,68.8 196.9,76.8 225.2,67.9 247.8,43.8 267.6,37.7 281.7,29.4 295.9,46.9 310,39.7" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <text x="26" y="19" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-soft)">6.5M km&sup2;</text>
+          <text x="26" y="134" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-soft)">3M km&sup2;</text>
+          <polygon points="30,26.8 65.9,43.2 144.9,35.4 187.9,91.9 195.1,77.8 209.5,76.8 216.7,86.0 223.8,117.2 245.4,83.0 252.6,91.6 274.1,90.9 281.3,103.1 302.8,89.6 310,88.0 310,130 30,130" fill="var(--orange)" opacity="0.08"></polygon>
+          <polyline points="30,26.8 65.9,43.2 144.9,35.4 187.9,91.9 195.1,77.8 209.5,76.8 216.7,86.0 223.8,117.2 245.4,83.0 252.6,91.6 274.1,90.9 281.3,103.1 302.8,89.6 310,88.0" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
           <line id="chart-guide" x1="310" y1="15" x2="310" y2="130" stroke="var(--orange)" stroke-width="1" stroke-dasharray="2,2" opacity="0.45"></line>
-          <circle id="chart-handle" cx="310" cy="39.7" r="6" fill="var(--paper)" stroke="var(--orange)" stroke-width="2.5"></circle>
+          <circle id="chart-handle" cx="310" cy="88.0" r="6" fill="var(--paper)" stroke="var(--orange)" stroke-width="2.5"></circle>
         </svg>
         <div style="display:flex; justify-content:space-between; margin-top:6px; padding-left:30px;">
-          <div class="mono" style="font-size:10.5px; color:var(--ink-soft);">1921</div>
+          <div class="mono" style="font-size:10.5px; color:var(--ink-soft);">1985</div>
           <div class="mono" style="font-size:10.5px; color:var(--orange-deep); font-weight:500;">&larr; drag &rarr;</div>
-          <div class="mono" style="font-size:10.5px; color:var(--ink-soft);">2020</div>
+          <div class="mono" style="font-size:10.5px; color:var(--ink-soft);">2024</div>
         </div>
-        <div class="mono" style="font-size:9.5px; color:var(--ink-soft); margin-top:4px; padding-left:30px;">Meters, relative to the station&rsquo;s mean sea level datum. 16 real annual readings plotted, NOAA CO-OPS.</div>
+        <div class="mono" style="font-size:9.5px; color:var(--ink-soft); margin-top:4px; padding-left:30px;">Million square kilometers, Arctic sea ice extent at its annual September minimum. 14 real annual readings plotted, NSIDC Sea Ice Index.</div>
       </div>
 
       <div class="mono" style="font-size:10.5px; letter-spacing:0.02em; color:var(--ink-soft); margin-top:12px; line-height:1.6;">
-        <a href="https://tidesandcurrents.noaa.gov/sltrends/sltrends_station.shtml?id=8443970" style="font-size:10.5px;">SOURCE: NOAA STATION 8443970, BOSTON MA &mdash; VIEW THE RAW DATA &rarr;</a><br>TALKE ET AL., <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2017JC013645" style="font-size:10.5px;">JGR: OCEANS, 2018</a>
+        <a href="https://nsidc.org/sea-ice-today/analyses/arctic-sea-ice-extent-levels-2024-minimum-set" style="font-size:10.5px;">SOURCE: NSIDC SEA ICE INDEX (G02135) &mdash; READ THE ANALYSIS &rarr;</a><br><a href="https://svs.gsfc.nasa.gov/5395" style="font-size:10.5px;">NASA: ANNUAL ARCTIC SEA ICE MINIMUM VISUALIZATION &rarr;</a>
       </div>
     </div>
 
