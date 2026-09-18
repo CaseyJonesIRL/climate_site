@@ -320,6 +320,14 @@ a:hover { color: #822c0e; text-decoration: underline; }
   scrollbar-width: none;
 }
 .subnav-inner::-webkit-scrollbar { display: none; }
+@media (min-width: 700px) {
+  .subnav-inner {
+    max-width: 640px;
+    justify-content: center;
+    gap: 14px;
+    overflow-x: visible;
+  }
+}
 .subnav a {
   font-family: "IBM Plex Mono", "Courier New", monospace;
   font-size: 12px;

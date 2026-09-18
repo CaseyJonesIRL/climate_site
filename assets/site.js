@@ -71,25 +71,26 @@ document.addEventListener("DOMContentLoaded", function () {
     link.rel = "noopener noreferrer";
   });
 
-  // Arctic ice chart: real drag-to-scrub, snapping to each of the 14
+  // Arctic ice chart: real drag-to-scrub, snapping to each of the 15
   // real annual September-minimum readings (NSIDC Sea Ice Index, G02135).
   var iceChart = document.getElementById("tide-chart");
   if (iceChart) {
     var iceData = [
       { year: 1985, value: 6.14, x: 30, y: 26.8 },
-      { year: 1990, value: 5.64, x: 65.9, y: 43.2 },
-      { year: 2001, value: 5.88, x: 144.9, y: 35.4 },
-      { year: 2007, value: 4.16, x: 187.9, y: 91.9 },
-      { year: 2008, value: 4.59, x: 195.1, y: 77.8 },
-      { year: 2010, value: 4.62, x: 209.5, y: 76.8 },
-      { year: 2011, value: 4.34, x: 216.7, y: 86.0 },
-      { year: 2012, value: 3.39, x: 223.8, y: 117.2 },
-      { year: 2015, value: 4.43, x: 245.4, y: 83.0 },
-      { year: 2016, value: 4.17, x: 252.6, y: 91.6 },
-      { year: 2019, value: 4.19, x: 274.1, y: 90.9 },
-      { year: 2020, value: 3.82, x: 281.3, y: 103.1 },
-      { year: 2023, value: 4.23, x: 302.8, y: 89.6 },
-      { year: 2024, value: 4.28, x: 310, y: 88.0 }
+      { year: 1990, value: 5.64, x: 65, y: 43.3 },
+      { year: 2001, value: 5.88, x: 142, y: 35.4 },
+      { year: 2007, value: 4.16, x: 184, y: 91.9 },
+      { year: 2008, value: 4.59, x: 191, y: 77.8 },
+      { year: 2010, value: 4.62, x: 205, y: 76.8 },
+      { year: 2011, value: 4.34, x: 212, y: 86.0 },
+      { year: 2012, value: 3.39, x: 219, y: 117.2 },
+      { year: 2015, value: 4.43, x: 240, y: 83.0 },
+      { year: 2016, value: 4.17, x: 247, y: 91.6 },
+      { year: 2019, value: 4.19, x: 268, y: 90.9 },
+      { year: 2020, value: 3.82, x: 275, y: 103.1 },
+      { year: 2023, value: 4.26, x: 296, y: 88.6 },
+      { year: 2024, value: 4.25, x: 303, y: 88.9 },
+      { year: 2025, value: 4.60, x: 310, y: 77.4 }
     ];
     var handle = document.getElementById("chart-handle");
     var guide = document.getElementById("chart-guide");
