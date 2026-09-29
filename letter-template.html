@@ -3,25 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>The Sea Yields</title>
+<title>Letter Template &middot; The Sea Yields</title>
+<meta name="description" content="A letter template asking Congress, the Superintendent, or the Commandant to lift the ban on &ldquo;climate change&rdquo; terminology at the Coast Guard Academy.">
+<link rel="canonical" href="https://theseayields.com/letter-template.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Sea Yields">
+<meta property="og:title" content="A letter template">
+<meta property="og:description" content="A letter template asking Congress, the Superintendent, or the Commandant to lift the ban on &ldquo;climate change&rdquo; terminology at the Coast Guard Academy.">
+<meta property="og:url" content="https://theseayields.com/letter-template.html">
+<meta property="og:image" content="https://theseayields.com/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Scienti&aelig; Cedit Mare: &ldquo;The sea yields to knowledge.&rdquo;">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<div class="subnav"><div class="subnav-inner">
+<nav class="subnav" aria-label="Site"><div class="subnav-inner">
   <a href="index.html">&larr; Home</a>
   <a href="academic-freedom.html">Not Censored Classrooms</a>
   <a href="climate-change.html">Talk About It</a>
   <a href="button-order.html">Wear a Button</a>
-</div></div>
+</div></nav>
 
+<main>
 <div class="band band-navy">
   <div class="col" style="padding:52px 28px 44px;">
     <div class="mono" style="font-size:11px; letter-spacing:0.16em; color:rgba(230,225,215,0.75); text-transform:uppercase;">If This Bothers You</div>
-    <div class="serif" style="font-size:26px; font-weight:600; margin-top:10px;">A letter template</div>
+    <h1 class="serif" style="font-size:26px; font-weight:600; margin-top:10px;">A letter template</h1>
   </div>
 </div>
 
@@ -33,12 +47,12 @@
     </div>
 
     <div style="border:1.5px solid var(--rule); border-radius:8px; padding:24px 22px; position:relative;">
-      <button id="copy-btn" type="button" class="mono" style="position:absolute; top:14px; right:14px; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; border:1px solid var(--rule); background:transparent; color:var(--ink-soft); padding:6px 10px; border-radius:4px; cursor:pointer;">Copy</button>
+      <button id="copy-btn" type="button" class="mono" aria-live="polite" style="position:absolute; top:14px; right:14px; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; border:1px solid var(--rule); background:transparent; color:var(--ink-soft); padding:6px 10px; border-radius:4px; cursor:pointer;">Copy</button>
       <div id="letter-body" class="serif" style="font-size:15px; line-height:1.75; color:var(--ink); white-space:pre-wrap;">Dear [Recipient],
 
-I am a graduate of the U.S. Coast Guard Academy, Class of [Year]. [Add your relevant background here, if it strengthens the case.] I am writing to ask you to press for the rescission of former Secretary Noem's February 14, 2025 directive banning all mention of "climate change" within the Coast Guard and at the Academy.
+I am a graduate of the U.S. Coast Guard Academy, Class of [Year]. [Add your relevant background here, if it strengthens the case.] I am writing to ask you to press for the rescission of former Secretary Noem's February 14, 2025 directive eliminating "climate change" terminology across the Department of Homeland Security, and of the Academy guidance that removed the term from class assignments and materials.
 
-This directive directly undermines Coast Guard readiness. The Academy runs the Center for Arctic Study and Policy &mdash; a mission impossible to fulfill while the words "climate change" are formally banned. Every CGA graduate earns a Bachelor of Science; censoring peer-reviewed science from coursework violates that credential.
+This directive directly undermines Coast Guard readiness. The Academy runs the Center for Arctic Study and Policy &mdash; a mission impossible to fulfill while the words "climate change" are formally banned. Every CGA graduate earns a Bachelor of Science; barring the standard scientific term from coursework undermines that credential.
 
 A public statement from you on this issue would matter, and I believe it's well within your reach.
 
@@ -59,36 +73,11 @@ Respectfully,
     </div>
   </div>
 </div>
+</main>
 
-<script>
-document.getElementById('copy-btn').addEventListener('click', function() {
-  var body = document.getElementById('letter-body');
-  var btn = document.getElementById('copy-btn');
-  var original = btn.textContent;
-  function flash(label) {
-    btn.textContent = label;
-    setTimeout(function() { btn.textContent = original; }, 1500);
-  }
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(body.innerText).then(function() {
-      flash('Copied');
-    }).catch(function() {
-      selectText(body);
-      flash('Selected — press ⌘/Ctrl+C');
-    });
-  } else {
-    selectText(body);
-    flash('Selected — press ⌘/Ctrl+C');
-  }
-  function selectText(el) {
-    var range = document.createRange();
-    range.selectNodeContents(el);
-    var sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-  }
-});
-</script>
+<footer class="site-footer">
+  <div class="col">Independent site. Neither the United States Coast Guard nor any other component of the Department of Homeland Security or the Department of Defense has approved, endorsed, or authorized this website or its buttons. Not affiliated with the U.S. Coast Guard Academy or the U.S. Coast Guard Academy Alumni Association. Views expressed here are the authors&rsquo; own.</div>
+</footer>
 
 <script src="assets/site.js"></script>
 </body>

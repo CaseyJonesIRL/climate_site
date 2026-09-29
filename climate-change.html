@@ -3,27 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>The Sea Yields</title>
+<title>Climate Change: Talk About It &middot; The Sea Yields</title>
+<meta name="description" content="Check the data yourself: the Arctic&rsquo;s September sea ice minimum every year since 1985, what&rsquo;s well-established about climate change, and what isn&rsquo;t.">
+<link rel="canonical" href="https://theseayields.com/climate-change.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Sea Yields">
+<meta property="og:title" content="Climate Change &mdash; Talk About It">
+<meta property="og:description" content="Check the data yourself: the Arctic&rsquo;s September sea ice minimum every year since 1985, what&rsquo;s well-established about climate change, and what isn&rsquo;t.">
+<meta property="og:url" content="https://theseayields.com/climate-change.html">
+<meta property="og:image" content="https://theseayields.com/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Scienti&aelig; Cedit Mare: &ldquo;The sea yields to knowledge.&rdquo;">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<div class="subnav"><div class="subnav-inner">
+<nav class="subnav" aria-label="Site"><div class="subnav-inner">
   <a href="index.html">&larr; Home</a>
   <a href="academic-freedom.html">Not Censored Classrooms</a>
   <a href="letter-template.html">Letter Template</a>
   <a href="button-order.html">Wear a Button</a>
-</div></div>
+</div></nav>
 
+<main>
 <div class="band band-navy">
   <div class="col" style="padding:52px 28px 44px; display:flex; flex-direction:column; align-items:center; gap:20px;">
     <div class="mono" style="font-size:11px; letter-spacing:0.16em; color:rgba(230,225,215,0.75); text-transform:uppercase;">USCGA &middot; The Science</div>
     <div class="badge" style="width:100%;">
       <div class="badge-dot"></div>
-      <div class="serif badge-title">Climate Change &mdash;<br>Talk About It</div>
+      <h1 class="serif badge-title">Climate Change &mdash;<br>Talk About It</h1>
     </div>
   </div>
 </div>
@@ -32,40 +46,41 @@
   <div class="col" style="padding:44px 28px; display:flex; flex-direction:column; gap:40px;">
 
     <div>
-      <div class="label">Start with a claim you can check tonight</div>
+      <h2 class="label">Start with a claim you can check tonight</h2>
       <div class="serif" style="font-size:16px; line-height:1.7; margin-bottom:18px;">
-        The Coast Guard runs the Center for Arctic Study and Policy. This program is built around a region that&rsquo;s changing fast enough to affect where ships can go, where search-and-rescue happens, and where the Coast Guard itself operates. Don&rsquo;t take our word for how fast. Below is the actual satellite record of the Arctic&rsquo;s summer sea ice minimum, year by year since 1985. Drag the timeline yourself.
+        The Coast Guard Academy runs the Center for Arctic Study and Policy. This program is built around a region that&rsquo;s changing fast enough to affect where ships can go, where search-and-rescue happens, and where the Coast Guard itself operates. Don&rsquo;t take our word for how fast. Below is the actual satellite record of the Arctic&rsquo;s summer sea ice minimum, year by year since 1985. Drag the timeline yourself.
       </div>
 
-      <div style="border:1.5px solid var(--rule); border-radius:8px; padding:18px 16px 14px;">
-        <div id="chart-readout" class="mono" style="font-size:13px; font-weight:600; color:var(--orange-deep); text-align:center; margin-bottom:8px;">2025 &middot; 4.60M km&sup2;</div>
-        <svg id="tide-chart" viewBox="0 0 320 160" width="100%" style="display:block; overflow:visible; touch-action:pan-y; cursor:grab;">
+      <div class="chart-box">
+        <div id="chart-readout" class="mono" style="font-size:13px; font-weight:600; color:var(--orange-deep); text-align:center; margin-bottom:8px;">2026 &middot; 4.60M km&sup2;</div>
+        <svg id="ice-chart" viewBox="0 0 320 160" width="100%" tabindex="0" role="slider" aria-label="Arctic September sea ice minimum, by year" aria-valuemin="1985" aria-valuemax="2026" aria-valuenow="2026" aria-valuetext="2026: 4.60 million square kilometers">
           <line x1="30" y1="15" x2="310" y2="15" stroke="var(--rule)" stroke-width="1"></line>
           <line x1="30" y1="130" x2="310" y2="130" stroke="var(--rule)" stroke-width="1"></line>
-          <text x="26" y="19" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-soft)">6.5M km&sup2;</text>
+          <text x="26" y="19" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-soft)">7.5M km&sup2;</text>
           <text x="26" y="134" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-soft)">3M km&sup2;</text>
-          <polygon points="30,26.8 65,43.3 142,35.4 184,91.9 191,77.8 205,76.8 212,86.0 219,117.2 240,83.0 247,91.6 268,90.9 275,103.1 296,88.6 303,88.9 310,77.4 310,130 30,130" fill="var(--orange)" opacity="0.08"></polygon>
-          <polyline points="30,26.8 65,43.3 142,35.4 184,91.9 191,77.8 205,76.8 212,86.0 219,117.2 240,83.0 247,91.6 268,90.9 275,103.1 296,88.6 303,88.9 310,77.4" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <!-- Line and area are drawn by assets/site.js from its iceData list. -->
+          <polygon id="chart-area" fill="var(--orange)" opacity="0.08"></polygon>
+          <polyline id="chart-line" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
           <line id="chart-guide" x1="310" y1="15" x2="310" y2="130" stroke="var(--orange)" stroke-width="1" stroke-dasharray="2,2" opacity="0.45"></line>
-          <circle id="chart-handle" cx="310" cy="77.4" r="6" fill="var(--paper)" stroke="var(--orange)" stroke-width="2.5"></circle>
+          <circle id="chart-handle" cx="310" cy="89.1" r="6" fill="var(--paper)" stroke="var(--orange)" stroke-width="2.5"></circle>
         </svg>
         <div style="display:flex; justify-content:space-between; margin-top:6px; padding-left:30px;">
           <div class="mono" style="font-size:10.5px; color:var(--ink-soft);">1985</div>
           <div class="mono" style="font-size:10.5px; color:var(--orange-deep); font-weight:500;">&larr; drag &rarr;</div>
-          <div class="mono" style="font-size:10.5px; color:var(--ink-soft);">2025</div>
+          <div class="mono" id="chart-end-year" style="font-size:10.5px; color:var(--ink-soft);">2026</div>
         </div>
-        <div class="mono" style="font-size:9.5px; color:var(--ink-soft); margin-top:4px; padding-left:30px;">Million square kilometers, Arctic sea ice extent at its annual September minimum. 15 real annual readings plotted, NSIDC Sea Ice Index.</div>
+        <div class="mono" style="font-size:9.5px; color:var(--ink-soft); margin-top:4px; padding-left:30px;">Million square kilometers: Arctic sea ice extent at its annual September minimum (5-day average), every year since 1985. NSIDC Sea Ice Index, version 4.</div>
       </div>
 
       <div class="mono" style="font-size:10.5px; letter-spacing:0.02em; color:var(--ink-soft); margin-top:12px; line-height:1.6;">
-        <a href="https://nsidc.org/sea-ice-today/analyses/2025-arctic-sea-ice-minimum-squeezes-ten-lowest-minimums" style="font-size:10.5px;">SOURCE: NSIDC SEA ICE INDEX (G02135) &mdash; READ THE ANALYSIS &rarr;</a><br><a href="https://svs.gsfc.nasa.gov/5395" style="font-size:10.5px;">NASA: ANNUAL ARCTIC SEA ICE MINIMUM VISUALIZATION &rarr;</a>
+        <a href="https://nsidc.org/data/g02135/versions/4" style="font-size:10.5px;">SOURCE: NSIDC SEA ICE INDEX (G02135) &mdash; GET THE DATA &rarr;</a><br><a href="https://nsidc.org/sea-ice-today/analyses/arctic-sea-ice-minimum-ties-tenth-lowest-0" style="font-size:10.5px;">NSIDC: 2026 MINIMUM ANALYSIS &rarr;</a><br><a href="https://science.nasa.gov/science-research/earth-science/climate-science/sea-ice/arctic-sea-ice-2026-min/" style="font-size:10.5px;">NASA: 2026 ARCTIC SEA ICE MINIMUM, WITH ANIMATION &rarr;</a>
       </div>
     </div>
 
     <div>
-      <div class="label">A study and a petition are not the same kind of evidence</div>
+      <h2 class="label">A study and a petition are not the same kind of evidence</h2>
       <div class="serif" style="font-size:16px; line-height:1.7; margin-bottom:20px;">
-        One side of this argument points to 88,125 peer-reviewed papers (2012&ndash;2020) &mdash; 99.9% concluding human activity is the primary driver. The other points to petitions signed by tens of thousands of people, including the 1998 Oregon Petition. These aren&rsquo;t comparable. A petition is a signature. A peer-reviewed paper is data, method, and analysis that other scientists tried to find fault with before it was allowed to publish, and can still challenge after.
+        One side of this argument points to a review of 88,125 peer-reviewed climate papers published from 2012 to 2020, which found a consensus of more than 99% that humans are causing climate change (<a href="https://doi.org/10.1088/1748-9326/ac2966"><em>Environmental Research Letters</em>, 2021</a>). The other points to petitions signed by tens of thousands of people, including the 1998 Oregon Petition. These aren&rsquo;t comparable. A petition is a signature. A peer-reviewed paper is data, method, and analysis that other scientists tried to find fault with before it was allowed to publish, and can still challenge after.
       </div>
       <div style="display:flex; gap:16px;">
         <div style="flex:1; display:flex; flex-direction:column; gap:6px;">
@@ -89,42 +104,42 @@
     </div>
 
     <div>
-      <div class="label">What&rsquo;s well-established, and what isn&rsquo;t</div>
+      <h2 class="label">What&rsquo;s well-established, and what isn&rsquo;t</h2>
 
       <div class="quote-block" style="margin-bottom:22px;">
-        <div class="serif" style="font-size:15px; font-style:italic; line-height:1.6; color:var(--ink-soft);">&ldquo;It doesn&rsquo;t matter how beautiful your theory is, it doesn&rsquo;t matter how smart you are. If it doesn&rsquo;t agree with experiment, it&rsquo;s wrong.&rdquo;</div>
-        <div class="mono" style="font-size:11px; color:var(--orange-deep);">&mdash; RICHARD FEYNMAN</div>
+        <div class="serif" style="font-size:17px; font-style:italic; line-height:1.6; color:var(--ink-soft);">&ldquo;If it disagrees with experiment it is wrong.&rdquo;</div>
+        <div class="mono" style="font-size:11px; color:var(--orange-deep);">&mdash; RICHARD FEYNMAN, THE CHARACTER OF PHYSICAL LAW (1965)</div>
       </div>
 
       <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:22px;">
-        <div class="sans" style="font-size:12.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;">Well-established</div>
+        <h3 class="sans" style="font-size:12.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;">Well-established</h3>
         <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px;">
           <li style="display:flex; flex-direction:column; gap:10px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--orange); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">CO2 traps heat &mdash; measured directly since Tyndall&rsquo;s 1859 experiments. <a href="https://nap.nationalacademies.org/catalog/18730/climate-change-evidence-and-causes" style="font-size:13px;">See the mechanism &rarr;</a></span></div>
+            <div style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--orange); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">CO2 traps heat &mdash; measured directly since Tyndall&rsquo;s 1859 experiments. <a href="https://www.nationalacademies.org/publications/18730" style="font-size:13px;">See the mechanism &rarr;</a></span></div>
             <div style="display:flex; gap:10px; align-items:flex-start; padding-left:22px;"><span style="width:4px; height:4px; border-radius:50%; background:var(--rule); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:13.5px; line-height:1.6; color:var(--ink-soft); font-style:italic;">Venus has a CO2-thick atmosphere and is the hottest planet in the solar system &mdash; hotter than Mercury, which is closer to the sun. Distance doesn&rsquo;t explain that. CO2 does.</span></div>
           </li>
           <li style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--orange); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">Ice cores show CO2 cycled between roughly 180&ndash;300 ppm over the last 800,000 years. It&rsquo;s now above 420 ppm &mdash; already outside that entire natural range, reached in a geological instant. <a href="https://gml.noaa.gov/ccgg/trends/" style="font-size:13px;">Live CO2 data &rarr;</a></span></li>
-          <li style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--orange); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">The fossil fuel industry&rsquo;s own internal models from the 1970s predicted the warming that&rsquo;s since been observed (<a href="https://www.science.org/doi/10.1126/science.abk0063"><em>Science</em>, 2023</a>).</span></li>
+          <li style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--orange); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">Most of ExxonMobil&rsquo;s own internal projections, made between 1977 and 2003, accurately predicted the warming that has since been observed (<a href="https://www.science.org/doi/10.1126/science.abk0063"><em>Science</em>, 2023</a>).</span></li>
           <li style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--orange); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">Warmer air holds more water vapor &mdash; about 7% more per 1&deg;C. Basic physics, not a projection.</span></li>
         </ul>
       </div>
 
       <div style="display:flex; flex-direction:column; gap:10px;">
-        <div class="sans" style="font-size:12.5px; font-weight:700; letter-spacing:0.03em; color:var(--ink-soft); text-transform:uppercase;">Still being worked out</div>
+        <h3 class="sans" style="font-size:12.5px; font-weight:700; letter-spacing:0.03em; color:var(--ink-soft); text-transform:uppercase;">Still being worked out</h3>
         <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px;">
-          <li style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--rule); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">The exact rate of sea-level rise beyond the next few decades &mdash; model spread is genuinely wide. <a href="https://tidesandcurrents.noaa.gov/sltrends/sltrends_station.shtml?id=8443970" style="font-size:13px;">Live trend data &rarr;</a></span></li>
+          <li style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--rule); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">The exact rate of sea-level rise beyond the next few decades &mdash; model spread is genuinely wide. <a href="https://tidesandcurrents.noaa.gov/sltrends/sltrends_station.shtml?id=8443970" style="font-size:13px;">Boston tide-gauge trend &rarr;</a></span></li>
           <li style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--rule); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">Cloud feedback effects &mdash; by climate scientists&rsquo; own account, one of the largest remaining sources of uncertainty. <a href="https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/" style="font-size:13px;">IPCC synthesis, not original research &rarr;</a></span></li>
           <li style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--rule); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">Precise regional and local impacts &mdash; much harder to pin down than global averages.</span></li>
-          <li style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--rule); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">Whether the total number of hurricanes is increasing &mdash; the historical data doesn&rsquo;t support a clear trend either way (<a href="https://www.gfdl.noaa.gov/global-warming-and-hurricanes/" style="font-size:13px;">NOAA&rsquo;s own assessment &rarr;</a>). Intensity is a different story: the share of storms reaching Category 3&ndash;5 has increased over the past 40 years, though tying that specifically to human-caused warming carries only <em>medium confidence</em> (<a href="https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-11/" style="font-size:13px;">IPCC AR6, Chapter 11 &rarr;</a>).</span></li>
+          <li style="display:flex; gap:10px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--rule); margin-top:8px; flex-shrink:0;"></span><span class="serif" style="font-size:14.5px; line-height:1.6; color:var(--ink-soft);">Whether the total number of hurricanes is increasing &mdash; the historical data doesn&rsquo;t support a clear trend either way (<a href="https://www.gfdl.noaa.gov/global-warming-and-hurricanes/" style="font-size:13px;">NOAA&rsquo;s own assessment &rarr;</a>). Intensity is a different story: the share of storms reaching Category 3&ndash;5 has likely increased over the past four decades, though tying that specifically to human-caused warming carries only <em>medium confidence</em> (<a href="https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-11/" style="font-size:13px;">IPCC AR6, Chapter 11 &rarr;</a>).</span></li>
         </ul>
       </div>
 
       <div class="box" style="margin-top:24px;">
-        <div class="box-title">Read more, directly from the source</div>
+        <h3 class="box-title">Read more, directly from the source</h3>
         <div class="box-note" style="margin-bottom:12px;">Straight from the agencies and societies that publish the underlying data and peer-reviewed research.</div>
         <div class="box-links">
-          <a href="https://climate.nasa.gov/evidence/">NASA: Evidence &rarr;</a>
-          <a href="https://www.climate.gov/news-features/understanding-climate">NOAA: Understanding Climate &rarr;</a>
+          <a href="https://science.nasa.gov/climate-change/evidence/">NASA: Evidence &rarr;</a>
+          <a href="https://www.climate.gov/news-features/understanding-climate">NOAA Climate.gov: Understanding Climate (archived June 2025) &rarr;</a>
           <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/">NOAA: Climate at a Glance &mdash; live data &rarr;</a>
           <a href="https://www.ametsoc.org/ams/about-ams/ams-statements/statements-of-the-ams-in-force/climate-change1/">American Meteorological Society: statement &rarr;</a>
           <a href="https://www.agu.org/science-policy/position-statements/climate">American Geophysical Union: position statement &rarr;</a>
@@ -137,13 +152,18 @@
 
 <div class="band band-navy">
   <div class="col" style="padding:40px 28px 52px;">
-    <div class="serif" style="font-size:18px; font-weight:600; margin-bottom:14px;">If this bothers you</div>
+    <h2 class="serif" style="font-size:18px; font-weight:600; margin-bottom:14px;">If this bothers you</h2>
     <div class="footer-cta">
       <a href="letter-template.html"><span class="sans" style="font-size:14.5px; font-weight:500;">Read a letter template</span><span class="sans" style="font-size:16px;">&rarr;</span></a>
       <a href="button-order.html"><span class="sans" style="font-size:14.5px; font-weight:500;">Wear a button &mdash; order and info</span><span class="sans" style="font-size:16px;">&rarr;</span></a>
     </div>
   </div>
 </div>
+</main>
+
+<footer class="site-footer">
+  <div class="col">Independent site. Neither the United States Coast Guard nor any other component of the Department of Homeland Security or the Department of Defense has approved, endorsed, or authorized this website or its buttons. Not affiliated with the U.S. Coast Guard Academy or the U.S. Coast Guard Academy Alumni Association. Views expressed here are the authors&rsquo; own.</div>
+</footer>
 
 <script src="assets/site.js"></script>
 </body>
