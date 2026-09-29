@@ -3,30 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
 <title>The Sea Yields</title>
+<meta name="description" content="The Coast Guard Academy&rsquo;s motto says the sea yields to knowledge. Since 2025, &ldquo;climate change&rdquo; has been a banned term in its classroom materials.">
+<link rel="canonical" href="https://theseayields.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Sea Yields">
+<meta property="og:title" content="The Sea Yields">
+<meta property="og:description" content="The Coast Guard Academy&rsquo;s motto says the sea yields to knowledge. Since 2025, &ldquo;climate change&rdquo; has been a banned term in its classroom materials.">
+<meta property="og:url" content="https://theseayields.com/">
+<meta property="og:image" content="https://theseayields.com/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Scienti&aelig; Cedit Mare: &ldquo;The sea yields to knowledge.&rdquo;">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
+<main>
 <!-- BEAT 1 -->
-<div class="band band-navy" id="beat1" style="cursor:pointer; min-height:100svh; display:flex; align-items:center;">
+<div class="band band-navy" id="beat1" style="min-height:100svh; display:flex; align-items:center;">
   <div class="col" style="padding:60px 28px;">
     <div style="display:flex; flex-direction:column; gap:26px;">
       <div style="text-align:center;">
-        <div class="serif" style="font-style:italic; font-size:21px; color:var(--orange);">Scientiæ Cedit Mare</div>
+        <h1 class="serif" style="font-style:italic; font-size:21px; color:var(--orange);">Scienti&aelig; Cedit Mare</h1>
       </div>
       <div class="serif" style="font-size:25px; line-height:1.55; text-align:center;">
         &ldquo;The sea yields to <span class="redact-slot"><span class="reveal-answer">knowledge</span><span class="redact-cover"></span></span>.&rdquo;
       </div>
-      <div class="mono reveal-note" style="font-size:10.5px; color:rgba(230,225,215,0.75); text-align:center;">Scientiæ &mdash; the Latin root of &ldquo;science.&rdquo;</div>
+      <div class="mono reveal-note" style="font-size:10.5px; color:rgba(230,225,215,0.75); text-align:center;">Scienti&aelig;, from scientia &mdash; the Latin root of &ldquo;science.&rdquo;</div>
       <div style="width:52px; height:1px; background:rgba(242,83,27,0.4); margin:2px auto;"></div>
       <div class="serif" style="font-size:18px; line-height:1.65; text-align:center; opacity:0.9;">
-        &ldquo;&hellip;well-grounded in seamanship, <span class="redact-slot"><span class="reveal-answer">the sciences</span><span class="redact-cover"></span></span>, and amenities&hellip;&rdquo;
+        &ldquo;&hellip;well-grounded in seamanship, <span class="redact-slot"><span class="reveal-answer">the sciences</span><span class="redact-cover"></span></span> and amenities&hellip;&rdquo;
       </div>
-      <div class="reveal-note">
+      <div class="reveal-note" id="beat1-message" tabindex="-1">
         <div style="width:52px; height:1px; background:rgba(242,83,27,0.22); margin:12px auto 20px;"></div>
         <div class="serif" style="font-size:22px; line-height:1.42; text-align:center; font-weight:600;">
           Climate change is now a censored term in a science classroom.
@@ -40,8 +54,8 @@
       </div>
     </div>
     <div class="scroll-hint">
-      <svg class="scroll-hint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-      <div class="mono scroll-hint-label pre-reveal" style="font-size:10.5px; letter-spacing:0.16em; color:rgba(242,83,27,0.85); text-transform:uppercase;">Tap to reveal</div>
+      <svg class="scroll-hint-chevron" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      <button type="button" class="mono scroll-hint-label pre-reveal reveal-btn" style="font-size:10.5px; letter-spacing:0.16em; color:rgba(242,83,27,0.85); text-transform:uppercase;">Tap to reveal</button>
       <div class="mono scroll-hint-label post-reveal" style="font-size:10.5px; letter-spacing:0.16em; color:rgba(242,83,27,0.85); text-transform:uppercase;">Keep scrolling</div>
     </div>
   </div>
@@ -54,17 +68,17 @@
       <div class="serif" style="font-size:18px; line-height:1.6; text-align:center; max-width:290px;">
         Coast Guard officers are trained to make decisions under pressure, with the best information available.
       </div>
-      <div class="serif" style="font-size:27px; font-weight:600; text-align:center;">
+      <h2 class="serif" style="font-size:27px; font-weight:600; text-align:center;">
         More information,<br>or less?
-      </div>
+      </h2>
       <div class="choice-row">
         <button class="choice-btn" type="button">MORE</button>
         <button class="choice-btn" type="button">LESS</button>
       </div>
-      <div class="choice-result">
+      <div class="choice-result" tabindex="-1">
         <div style="width:60px; height:1px; background:rgba(242,83,27,0.3);"></div>
         <div class="sans" style="font-size:15px; color:var(--orange); text-align:center; max-width:270px; font-weight:500;">
-          The Academy just chose less. On one specific topic.
+          The Academy was ordered to choose less. On one specific topic.
         </div>
       </div>
     </div>
@@ -76,7 +90,7 @@
   <div class="col" style="padding:60px 28px;">
     <div style="display:flex; flex-direction:column; gap:32px; width:100%; align-items:center;">
       <div style="text-align:center;">
-        <div class="serif" style="font-size:23px; font-weight:600;">Where do you want to start?</div>
+        <h2 class="serif" style="font-size:23px; font-weight:600;">Where do you want to start?</h2>
         <div class="sans" style="font-size:13px; color:rgba(230,225,215,0.85); margin-top:10px; max-width:270px; margin-left:auto; margin-right:auto;">Whatever you believe about the science, pick a place to start.</div>
       </div>
       <a href="academic-freedom.html" class="badge-link">
@@ -95,15 +109,20 @@
   </div>
 </div>
 
-<!-- FULL MISSION STATEMENT (footnote) -->
-<div class="band band-paper" id="mission-statement">
+<!-- FULL MISSION STATEMENT (footnote), verbatim from uscga.edu/about -->
+<div class="band band-paper" id="mission-statement" tabindex="-1">
   <div class="col" style="padding:44px 28px;">
-    <div class="label">Full mission statement, USCGA</div>
+    <h2 class="label">Full mission statement, USCGA</h2>
     <div class="serif" style="font-size:15px; line-height:1.7; color:var(--ink-soft);">
-      &ldquo;To graduate young men and women with sound bodies, stout hearts, and alert minds, with a liking for the sea and its lore, and with that high sense of honor, loyalty, and obedience which goes with trained initiative and leadership; well-grounded in seamanship, the <span class="glow-word">sciences</span>, and amenities, and strong in the resolve to be worthy of the traditions of commissioned officers in the United States Coast Guard in the service of their country and humanity.&rdquo;
+      &ldquo;To graduate young men and women with sound bodies, stout hearts and alert minds, with a liking for the sea and its lore, with that high sense of honor, loyalty and obedience which goes with trained initiative and leadership; well-grounded in seamanship, the <span class="glow-word">sciences</span> and amenities, and strong in the resolve to be worthy of the traditions of commissioned officers in the United States Coast Guard in the service of their country and humanity.&rdquo;
     </div>
   </div>
 </div>
+</main>
+
+<footer class="site-footer">
+  <div class="col">Independent site. Neither the United States Coast Guard nor any other component of the Department of Homeland Security or the Department of Defense has approved, endorsed, or authorized this website or its buttons. Not affiliated with the U.S. Coast Guard Academy or the U.S. Coast Guard Academy Alumni Association. Views expressed here are the authors&rsquo; own.</div>
+</footer>
 
 <script src="assets/site.js"></script>
 </body>

@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------
-   Not Censored Classrooms — shared styles
+   The Sea Yields — shared styles
    Palette verified against USCGA's real colors:
    blue #223C70 (PMS 2119C) and the Coast Guard racing-stripe
    orange #F2531B (PMS 172C) — not an invented brand.
@@ -32,14 +32,34 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Headings carry document structure only; each one's look comes from
+   its classes and inline styles, exactly as the divs they replaced. */
+h1, h2, h3 { margin: 0; font: inherit; }
+
 .serif { font-family: "Source Serif 4", Georgia, "Times New Roman", serif; }
 .sans { font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif; }
 .mono { font-family: "IBM Plex Mono", "Courier New", monospace; }
 
 a { color: var(--orange-deep); text-decoration: none; }
 a:hover { color: #822c0e; text-decoration: underline; }
-.navy a, .on-navy { color: var(--orange); }
-.navy a:hover { color: var(--orange-bright); }
+.band-navy a { color: var(--orange); }
+.band-navy a:hover { color: var(--orange-bright); }
+.badge-link:hover { text-decoration: none; }
+
+/* Links inside running text are underlined so they stand out by more
+   than color alone. Standalone "→" links keep the clean look. */
+.serif a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(169, 58, 19, 0.45);
+}
+.serif a:hover { text-decoration-color: currentColor; }
+
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+/* Blocks that receive focus from script (so screen readers announce
+   newly revealed text) aren't controls, so they don't need a ring. */
+[tabindex="-1"]:focus { outline: none; }
 
 /* Layout: full-bleed color bands, constrained reading column */
 .band {
@@ -119,6 +139,7 @@ a:hover { color: #822c0e; text-decoration: underline; }
    a cover sits on top and wipes away via transform/opacity only, so
    nothing around it ever reflows. This is what makes the reveal smooth
    instead of jumpy. */
+#beat1:not(.is-revealed) { cursor: pointer; }
 .redact-slot {
   position: relative;
   display: inline-block;
@@ -180,6 +201,17 @@ a:hover { color: #822c0e; text-decoration: underline; }
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(6px); }
 }
+/* "Tap to reveal" is a real button so keyboard and screen-reader users
+   can reveal the redacted text too; it keeps the plain label look. */
+.reveal-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  margin: -6px -10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
 
 /* Mission statement word glow, triggered on scroll into view */
 .glow-word {
@@ -195,7 +227,6 @@ a:hover { color: #822c0e; text-decoration: underline; }
   40%  { text-shadow: 0 0 16px rgba(242, 83, 27, 0.7), 0 0 32px rgba(242, 83, 27, 0.35); color: var(--orange); }
   100% { text-shadow: 0 0 8px rgba(242, 83, 27, 0.3); color: var(--orange); }
 }
-.is-revealed .reveal-hint { display: none !important; }
 
 /* Section labels/quotes reused across subpages */
 .quote-block {
@@ -205,32 +236,6 @@ a:hover { color: #822c0e; text-decoration: underline; }
   flex-direction: column;
   gap: 18px;
 }
-
-/* Timeline */
-.timeline { position: relative; padding-left: 22px; }
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 5px; top: 6px; bottom: 6px;
-  width: 1.5px;
-  background: var(--rule);
-}
-.timeline-item { position: relative; padding-bottom: 26px; }
-.timeline-item:last-child { padding-bottom: 0; }
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -22px; top: 4px;
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  background: var(--orange);
-  border: 2px solid var(--paper);
-}
-.timeline-date {
-  font-size: 11.5px; font-weight: 500; letter-spacing: 0.04em;
-  color: var(--orange-deep); margin-bottom: 5px;
-}
-.timeline-body { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); }
 
 /* Read-more box / bordered callouts */
 .box {
@@ -264,6 +269,17 @@ a:hover { color: #822c0e; text-decoration: underline; }
 .chip.weak { border-color: var(--rule); color: var(--ink-soft); }
 .chip.strong { border-color: var(--orange); font-weight: 600; }
 .chip-connector { width: 1.5px; height: 10px; background: var(--rule); margin: 0 auto; }
+
+/* Arctic ice chart — drag, tap, or use arrow keys to scrub by year */
+.chart-box { border: 1.5px solid var(--rule); border-radius: 8px; padding: 18px 16px 14px; }
+#ice-chart { display: block; overflow: visible; touch-action: pan-y; cursor: grab; }
+#ice-chart.is-dragging { cursor: grabbing; }
+/* The axis labels hang outside the SVG's box, so draw the keyboard
+   focus ring around the whole chart box instead of through them. */
+@supports selector(:has(*)) {
+  #ice-chart:focus-visible { outline: none; }
+  .chart-box:has(#ice-chart:focus-visible) { outline: 2px solid var(--orange); outline-offset: 2px; }
+}
 
 /* Footer CTA */
 .footer-cta a {
@@ -299,6 +315,18 @@ a:hover { color: #822c0e; text-decoration: underline; }
   animation: revealFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .choice-made .choice-row { display: none; }
+
+/* Site footer: independence disclaimer on every page */
+.site-footer {
+  background: var(--navy-deep);
+  border-top: 1px solid rgba(242, 83, 27, 0.2);
+  color: rgba(230, 225, 215, 0.7);
+}
+.site-footer .col {
+  padding: 18px 28px 22px;
+  font-size: 11.5px;
+  line-height: 1.6;
+}
 
 @media (max-width: 380px) {
   .col { padding: 0 20px; }
@@ -348,4 +376,15 @@ a:hover { color: #822c0e; text-decoration: underline; }
   background: rgba(242, 83, 27, 0.14);
   border-color: rgba(242, 83, 27, 0.6);
   color: var(--orange);
+}
+
+/* Respect the OS "reduce motion" setting: every animation and transition
+   jumps straight to its end state. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
