@@ -96,6 +96,8 @@ a:hover { color: #822c0e; text-decoration: underline; }
   top: 0%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.badge.is-running .badge-dot {
   animation: badgeDotRun 1s linear 0.2s 1;
 }
 @keyframes badgeDotRun {
