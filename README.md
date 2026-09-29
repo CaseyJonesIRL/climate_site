@@ -1,4 +1,4 @@
-# Not Censored Classrooms
+# The Sea Yields
 
 A static site — no build step, no backend. Plain HTML/CSS/JS, deployable straight to GitHub Pages.
 
@@ -35,18 +35,17 @@ then open `http://localhost:8743`.
 3. In the repo's **Settings → Pages**, set the source to the `main` branch, root folder.
 4. GitHub will publish it at `https://<your-username>.github.io/<repo-name>/`.
 
-## Adding your custom domain
+## Custom domain
 
-Once you've bought the domain (see prior discussion — `.org` recommended, e.g. `notcensoredclassrooms.org`):
+The site is live at **https://theseayields.com**. `theseayields.org` redirects to it.
 
-1. Add a file named `CNAME` (no extension) at the repo root, containing just your domain name, e.g.:
-   ```
-   notcensoredclassrooms.org
-   ```
-2. At your registrar (or Cloudflare, if you route DNS through them), add:
-   - An `A` record for the root domain pointing at GitHub Pages' IPs: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - A `CNAME` record for `www` pointing at `<your-username>.github.io`
-3. Back in **Settings → Pages**, enter the custom domain and enable "Enforce HTTPS" once it's verified (can take a few minutes to a few hours after DNS propagates).
+- **`CNAME` file** at the repo root contains `theseayields.com`. Don't delete it: GitHub Pages reads it to know the custom domain. (Removing the domain in Settings → Pages deletes this file too.)
+- **DNS (Namecheap → Advanced DNS)** for `theseayields.com`:
+  - Four `A` records on `@` pointing at GitHub Pages: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+  - A `CNAME` record on `www` pointing at `caseyjonesirl.github.io.`
+  - Nothing else on `@`. In particular, no `URL Redirect Record` — it adds Namecheap's redirect server (`162.255.119.207`) to the DNS answers and blocks the HTTPS certificate.
+- **`theseayields.org`** uses Namecheap's **Redirect Domain** (Domain tab) for `theseayields.org` and `www.theseayields.org` → `https://theseayields.com`. Namecheap redirects can't serve HTTPS, so `https://theseayields.org` may show a certificate warning; plain `theseayields.org` works.
+- **HTTPS:** GitHub issues and renews the certificate automatically. "Enforce HTTPS" is on in **Settings → Pages**. If it ever gets stuck greyed out, clear the custom domain and set it again to trigger a fresh certificate request.
 
 ## Known placeholders — real destinations still needed before launch
 
