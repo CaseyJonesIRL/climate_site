@@ -9,7 +9,6 @@ index.html              Entry sequence (Beat 1 tap-reveal, Beat 2 choice, Beat 3
 academic-freedom.html   "Semper Paratus — Not Censored Classrooms"
 climate-change.html     "Climate Change — Talk About It"
 assets/style.css        All shared styles, colors, components
-assets/gate.js          Password gate (see below)
 assets/site.js          Tap-to-reveal / choice interactions
 .claude/launch.json     Local dev server config (for Claude Code's preview only)
 ```
@@ -23,18 +22,6 @@ python3 -m http.server 8743
 ```
 
 then open `http://localhost:8743`.
-
-## The password gate
-
-`assets/gate.js` has one line to change:
-
-```js
-var PASSWORD = "76ers1976";
-```
-
-**This is not real security.** The repo has to be public for free GitHub Pages hosting, so anyone who reads the source can see the password in plain text. It only stops casual visitors and search engines from landing on the site before you're ready — not a determined or technical visitor. Change the password before sending the link to reviewers, and again before wider review if you're worried about it leaking. Once the site is meant to be fully public, delete the `<script src="assets/gate.js">` line from all three HTML files (or just leave the password gate off going forward — it's harmless to leave in place, but pointless once launched).
-
-If you want something that's *actually* secure instead (a real login wall, no password visible in the repo), the better free option is Cloudflare Access — point the domain's DNS through Cloudflare and put their Zero Trust login in front of the whole site. More setup, but properly secure. Ask if you want that built instead.
 
 ## Deploying to GitHub Pages
 
