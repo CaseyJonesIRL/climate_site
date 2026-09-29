@@ -19,6 +19,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Run each badge's dot once around the track when the badge scrolls into view
+  var badges = document.querySelectorAll(".badge");
+  if ("IntersectionObserver" in window) {
+    var badgeObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-running");
+            badgeObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.9 }
+    );
+    badges.forEach(function (b) { badgeObserver.observe(b); });
+  } else {
+    badges.forEach(function (b) { b.classList.add("is-running"); });
+  }
+
   var mission = document.getElementById("mission-statement");
   if (mission && "IntersectionObserver" in window) {
     var observer = new IntersectionObserver(

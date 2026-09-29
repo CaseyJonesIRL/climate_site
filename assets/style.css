@@ -96,6 +96,8 @@ a:hover { color: #822c0e; text-decoration: underline; }
   top: 0%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.badge.is-running .badge-dot {
   animation: badgeDotRun 1s linear 0.2s 1;
 }
 @keyframes badgeDotRun {
@@ -347,66 +349,3 @@ a:hover { color: #822c0e; text-decoration: underline; }
   border-color: rgba(242, 83, 27, 0.6);
   color: var(--orange);
 }
-
-/* Password gate — hide real content until unlocked */
-body { visibility: hidden; }
-html.gate-unlocked body { visibility: visible; }
-
-#ncc-gate {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: var(--navy-deep);
-  background-image: radial-gradient(circle at 50% -10%, var(--navy) 0%, var(--navy-deep) 65%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  visibility: visible !important;
-}
-.ncc-gate-box {
-  width: 100%;
-  max-width: 340px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  text-align: center;
-}
-.ncc-gate-eyebrow {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  color: var(--orange);
-  text-transform: uppercase;
-}
-.ncc-gate-title {
-  font-family: "Source Serif 4", Georgia, serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: oklch(97% 0.012 85);
-  margin-bottom: 4px;
-}
-#ncc-gate-input {
-  font-family: "Public Sans", sans-serif;
-  font-size: 15px;
-  padding: 12px 14px;
-  border-radius: 4px;
-  border: 1.5px solid rgba(242, 83, 27, 0.5);
-  background: rgba(255, 255, 255, 0.06);
-  color: oklch(97% 0.012 85);
-}
-#ncc-gate-input::placeholder { color: rgba(230, 225, 215, 0.5); }
-#ncc-gate-submit {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 12px;
-  border-radius: 4px;
-  border: 1.5px solid var(--orange);
-  background: transparent;
-  color: var(--orange);
-  cursor: pointer;
-}
-#ncc-gate-submit:hover { background: rgba(242, 83, 27, 0.12); }
-.ncc-gate-error { font-size: 13px; color: var(--orange-bright); }
