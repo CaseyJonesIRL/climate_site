@@ -39,6 +39,12 @@ Merging to `main` publishes. GitHub Pages rebuilds from the `main` branch root w
 
 NSIDC announces the Arctic minimum in mid-to-late September. Add the new year to the `iceData` list in `assets/site.js`, using the minimum extent from NSIDC's announcement (or the "NH-Annual-5-Day-Extent" sheet of NSIDC's `Sea_Ice_Index_Min_Max_Rankings_G02135_v4.0.xlsx`), rounded to two decimals. The chart, its end-year label, and the default readout all update from that list. Also point the "2026 minimum analysis" and NASA links in `climate-change.html` at the new year's pages.
 
+## Analytics
+
+Visitor counts come from [GoatCounter](https://www.goatcounter.com) (no cookies, no personal data). Dashboard: https://caseyjonesirl.goatcounter.com. Every page loads it with the one `<script data-goatcounter=...>` tag in its `<head>`; add the same tag to any new page.
+
+Print `https://theseayields.com/?ref=qr` in the QR code and set the Namecheap `.org` redirect to `https://theseayields.com/?ref=org`, so the dashboard can separate those visitors.
+
 ## Custom domain
 
 The site is live at **https://theseayields.com**. `theseayields.org` redirects to it.
