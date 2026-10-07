@@ -41,7 +41,7 @@ NSIDC announces the Arctic minimum in mid-to-late September. Add the new year to
 
 ## Analytics
 
-Visitor counts come from [GoatCounter](https://www.goatcounter.com) (no cookies, no personal data). Dashboard: https://caseyjonesirl.goatcounter.com. Every page loads it with the one `<script data-goatcounter=...>` tag in its `<head>`; add the same tag to any new page.
+Visitor counts come from [GoatCounter](https://www.goatcounter.com) (no cookies, no personal data). Dashboard: https://theseayields.goatcounter.com. Every page loads it with the one `<script data-goatcounter=...>` tag in its `<head>`; add the same tag to any new page.
 
 Print `https://theseayields.com/?ref=qr` in the QR code and set the Namecheap `.org` redirect to `https://theseayields.com/?ref=org`, so the dashboard can separate those visitors.
 
